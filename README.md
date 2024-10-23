@@ -1,63 +1,68 @@
-# freeTradingBots - Make sure to back test before using
-This is a repository for free bots that you can use to trade at your own discretion and earn millions.
+<strategy>
+    <trade_parameters>
+        <market>R_100</market>
+        <trade_type>CALL</trade_type>
+        <stake>1</stake>
+        <duration>5</duration>
+    </trade_parameters>
 
-Free Trading Bots Repository: Automate Your Trading Strategies
-Description
-Welcome to the Free Trading Bots Repository! This repository is your one-stop solution for all free and open-source trading bots across various platforms and languages. From cryptocurrency trading bots like Bitcoin, Ethereum, and other altcoins to traditional stock market trading, we've got you covered. Automate your trading strategies and optimize your profits without spending a dime on expensive bots.
+    <purchase_conditions>
+        <condition>
+            <indicator>RSI</indicator>
+            <period>14</period>
+            <level>30</level>
+            <operator>GREATER_THAN</operator>
+        </condition>
+    </purchase_conditions>
 
+    <restart_conditions>
+        <loss_multiplier>2</loss_multiplier>
+        <max_consecutive_losses>5</max_consecutive_losses>
+    </restart_conditions>
+</strategy>
+<strategy>
+    <trade_parameters>
+        <market>R_100</market>
+        <trade_type>PUT</trade_type>
+        <stake>1</stake>
+        <duration>5</duration>
+    </trade_parameters>
 
-Keywords
-Free Trading Bots
-Crypto Trading Bots
-Stock Market Trading Bots
-Algorithmic Trading
-Automated Trading
-Forex Trading Bots
-Open Source Trading
-Python Trading Bot
-JavaScript Trading Bot
-Features
-Variety of Bots: Collection of bots for Forex, Stocks, and Cryptocurrency markets.
-Multi-Language Support: Bots are available in languages such as Python, JavaScript, Java, and more.
-Cross-Platform: Bots that can run on various platforms like Binance, MetaTrader, Coinbase, etc.
-Easy to Use: Well-documented code with setup guides for each bot.
-Community Support: A community of developers and traders contributing to the project.
-Table of Contents
-Installation
-Usage
-Contributing
-License
-FAQs
-Installation
-Follow the individual README files inside each bot's folder for installation instructions.
+    <purchase_conditions>
+        <condition>
+            <indicator>CCI</indicator> <!-- Commodity Channel Index for overbought/oversold -->
+            <period>20</period>
+            <level>100</level>
+            <operator>LESS_THAN</operator>
+        </condition>
+    </purchase_conditions>
 
-Create an Account: 
-https://rb.gy/xqt44t
+    <restart_conditions>
+        <win_stake_decrease>1</win_stake_decrease>
+        <loss_stake_increase>1</loss_stake_increase>
+        <max_consecutive_losses>5</max_consecutive_losses>
+    </restart_conditions>
+</strategy>
+<strategy>
+    <trade_parameters>
+        <market>R_100</market>
+        <trade_type>CALL</trade_type>
+        <stake>1</stake>
+        <duration>5</duration>
+    </trade_parameters>
 
-# Wondering how to deposit
+    <purchase_conditions>
+        <condition>
+            <indicator>MACD</indicator> <!-- Moving Average Convergence Divergence -->
+            <period_fast>12</period_fast>
+            <period_slow>26</period_slow>
+            <signal_period>9</signal_period>
+            <operator>CROSS_ABOVE</operator>
+        </condition>
+    </purchase_conditions>
 
-# Simply deposit with MPESA by following this steps: -
-- Kindly send the amount you want to deposit to till 4475834 (GEIGHTFORGEIGHT INVESTMENT)
-- whatsapp your cr number to 0792 673 175
-- wait 1 minute and the deposit should be done
-- check your account to ensure the dollars have been credited
-
-# WHERE TO LEARN FOR FREE
-Youtube: https://www.youtube.com/channel/UCVpd8EuS8yAWMGkNtZ23Y3A
-
-- 
-Usage
-Check the guide inside each bot’s directory to learn how to deploy and customize the trading bot.
-
-Contributing
-Feel free to contribute to this repository by creating a pull request or opening an issue. For detailed contributing guidelines, check out the CONTRIBUTING.md file.
-
-License
-All bots in this repository are open-source under the MIT License. See the LICENSE file for details.
-
-FAQs
-Visit our FAQs section to find answers to commonly asked questions.
-
-Note: Trading involves risks. It's recommended to understand the risks before deploying any bot in a live trading environment.
-
-If you find this repository useful, please star it to make it more visible to the community. Happy Trading! 📈
+    <restart_conditions>
+        <win_stake_increase>1</win_stake_increase>
+        <max_consecutive_losses>3</max_consecutive_losses>
+    </restart_conditions>
+</strategy>
